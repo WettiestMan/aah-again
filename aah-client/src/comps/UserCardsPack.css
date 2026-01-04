@@ -1,0 +1,31 @@
+.user-cards-pack {
+  margin-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  width: 67%;
+  scroll-snap-type: y mandatory;
+  max-height: 66vh;
+  padding: 1rem;
+  scrollbar-width: 12px;
+  scrollbar-color: black transparent;
+  border-radius: 5px;
+  border-radius: 10px !important;
+}
+
+.user-cards-pack::-webkit-scrollbar {
+  width: 12px;
+}
+
+.user-cards-pack::-webkit-scrollbar-thumb,
+.user-cards-pack::-webkit-scrollbar-track {
+  border-radius: 10px !important;
+}
+
+.user-cards-pack::-webkit-scrollbar-track {
+  background-color: black;
+}
+
+.user-cards-pack::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}

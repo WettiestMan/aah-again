@@ -1,0 +1,10 @@
+@scope (.forms-container) {
+    :scope {
+        width: 33%;
+        margin-left: 1rem;
+    }
+
+    label {
+        text-align: left;
+    }
+}
