@@ -5,6 +5,7 @@ import './App.css';
 import type { UserType } from './interactions/UserType.js';
 import UserCardsPack from './comps/UserCardsPack.js';
 import UserForms from './comps/UserForms.js';
+import { fetchUsers } from './interactions/ApiInteractions.js';
 
 /*function App() {
   const [count, setCount] = useState(0)
@@ -37,9 +38,17 @@ import UserForms from './comps/UserForms.js';
 function App(): JSX.Element {
   const [message, setMessage] = useState([] as UserType[]);
   useEffect(() => {
-    fetch('/api/users')
-      .then(res => res.json())
-      .then(data => setMessage(data));
+    fetchUsers()
+      .then(data => {
+        if (data instanceof Number) {
+          const err = data as number;
+          alert(`Error fetching data: ${err}`);
+        }
+        else {
+          setMessage(data as UserType[]);
+        }
+      })
+      .catch(err => alert(`Error communicating with the server: ${err}`));
   }, []);
 
   return (
