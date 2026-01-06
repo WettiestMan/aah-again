@@ -17,7 +17,7 @@ app.get("/api", (request, response) => {
 app.get("/api/users", (request, response) => {
   fetchUsers()
     .then((users) => response.json(users))
-    .catch((err) => {
+    .catch(() => {
       response.status(500).send("unable to fetch data");
     });
 });
@@ -31,7 +31,7 @@ app.get("/api/users/:id", (request, response) => {
         response.status(404).send("User not found");
       }
     })
-    .catch((err) => response.status(500).send("Internal server error"));
+    .catch(() => response.status(500).send("Internal server error"));
 });
 
 app.post("/api/users", (request, response) => {
@@ -43,7 +43,7 @@ app.post("/api/users", (request, response) => {
         response.status(400).send("Error at adding user");
       }
     })
-    .catch((err) => response.status(500).send("Internal server error"));
+    .catch(() => response.status(500).send("Internal server error"));
 });
 
 app.put("/api/users/:id", (request, response) => {
@@ -55,7 +55,7 @@ app.put("/api/users/:id", (request, response) => {
         response.status(404).send("Error at updating user");
       }
     })
-    .catch((err) => response.status(500).send("Internal server error"));
+    .catch(() => response.status(500).send("Internal server error"));
 });
 
 app.delete("/api/users/:id", (request, response) => {
@@ -67,7 +67,7 @@ app.delete("/api/users/:id", (request, response) => {
         response.status(404).send("Error at deleting user");
       }
     })
-    .catch((err) => response.status(500).send("Internal server error"));
+    .catch(() => response.status(500).send("Internal server error"));
 });
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));

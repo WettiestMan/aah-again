@@ -1,0 +1,14 @@
+{
+	"name": "aah-again",
+	"version": "0.1.0",
+	"type": "module",
+	"scripts": {
+		"lint": "npm run lint:client && npm run lint:server",
+		"lint:server": "cd aah-server && npm run lint",
+		"lint:client": "cd aah-client && npm run lint",
+		"build": "npm run build:client && npm run build:server",
+		"build:client": "cd aah-client && npm run build",
+		"build:server": "cd aah-server && npm run build",
+		"start": "cd aah-server && npm run start"
+	}
+}
